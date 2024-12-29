@@ -12,11 +12,12 @@
       font-family: "Lato", serif;
       font-weight: 400;
       font-style: italic;
-      background-color: #111;
+      background-color: #310303;
       scroll-behavior: smooth;
       overflow-y: scroll;
   }
 
+  
   ::-webkit-scrollbar {
     width: 15px; /* Width of the vertical scrollbar */
     
@@ -35,6 +36,12 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgb(144, 27, 56); /* Darker blue when hovered */
+}
+.nav-home{
+  background: url("./img/lamborghini-6000x3375-19821.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
   /*  */
   .language-toggle {
@@ -57,19 +64,6 @@
 
   .language-button img:hover {
     opacity: 0.8;
-  }
-
-
-  /* Background video styling */
-  #background-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1000;
-      background-repeat: no-repeat;
   }
   #checkbox{
     display: none;
@@ -113,6 +107,7 @@
       padding: 10px;
       margin: 0 100px;
       transition: 2s ease
+      
   }
 
 
@@ -261,9 +256,8 @@
       flex-direction: row-reverse;
       align-items: center;
       justify-content: flex-start;
-      height: 100vh;
-      margin-bottom: 160px;
-
+      height: fit-content;
+      padding: 90px 0;
     }
 
   .tma-cart {
@@ -340,7 +334,6 @@
     height: 200px;
     width: 200px;
     border-radius: 10px;
-    cursor: pointer;
     transition: 400ms;
     font-weight: 500;
     font-size: larger;

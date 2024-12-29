@@ -42,3 +42,7 @@ function toggleDetails(id) {
 }
 
 // 
+document.querySelector('.background-video').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent click actions
+    return false; // Block default behavior
+});
