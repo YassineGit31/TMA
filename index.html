@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMA MECANIQUE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="scrollbar-car"></div>
+    <!-- Navigation Section -->
+    <div class="nav-home">
+        <video autoplay muted loop id="background-video">
+            <source src="./img/3752531-hd_1920_1080_24fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <section class="nav">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="logo">
+                        <img src="./img/tmaBlack-removebg-preview.png" alt="TMA LOGO">
+                    </div>
+                    <input id="checkbox" type="checkbox">
+                    <label class="toggle" for="checkbox">
+                        <div id="bar1" class="bars"></div>
+                        <div id="bar2" class="bars"></div>
+                        <div id="bar3" class="bars"></div>
+                    </label>
+
+                    <ul class="menu">
+                        <li id="home"><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <div class="language-toggle">
+                            <button class="language-button" onclick="changeLanguage('fr')">
+                                <img src="./img/france.png" alt="Français">
+                            </button>
+                            <button class="language-button" onclick="changeLanguage('en')">
+                                <img src="./img/etats-unis.png" alt="English">
+                            </button>
+                        </div>
+                    </ul>
+
+                    <div class="card-social">
+                        <ul>
+                            <li class="iso-pro">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <a href="https://www.facebook.com/profile.php?id=61563999662538&locale=fr_FR" target="_blank">
+                                    <svg viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg" class="svg">
+                                        <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                                    </svg>
+                                </a>
+                                <div class="text">Facebook</div>
+                            </li>
+                            <li class="iso-pro">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <a href="https://www.instagram.com/tmateammecanique/" target="_blank">
+                                    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                                    </svg>
+                                </a>
+                                <div class="text">Instagram</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <!-- Home Section -->
+
+        <section class="home" id="home">
+
+
+            <div class="cards">
+<a href="#contact" class="contact-us-btn">
+    <button
+    type="submit"
+    class="flex justify-center gap-2 items-center  mx-auto shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-red-600 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-4 overflow-hidden border-2 rounded-full group"
+  >
+    Contact Us Now !
+    <svg
+      class="w-8 h-8 justify-end group-hover:rotate-180 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
+      viewBox="0 0 16 19"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+        class="fill-gray-800 group-hover:fill-gray-800"
+      ></path>
+    </svg>
+  </button>
+</a>
+
+                <div class="card red">
+                    <p class="tip">SATISFACTION</p>
+                    <p class="second-text">Over 10,000 happy customers.</p>
+                </div>
+                <div class="card white">
+                    <p class="tip">10 Years Experience</p>
+                    <p class="second-text">A decade of trusted service.</p>
+                </div>
+                <div class="card blue">
+                    <p class="tip">100+ Cars Daily</p>
+                    <p class="second-text">Fast, reliable repairs every day.</p>
+                </div>
+            </div>
+
+            <div class="tma-cart">
+                <h1 class="tma-title"><span style="color: red;">M</span>echanical <span style="color: red;">T</span>eam <span style="color: red;">A</span>lger: Trusted Repairs, Superior Care.</h1>
+                <p class="tma-detail">"Excellence in German Cars, Expertise for Every Vehicle."</p>
+                <a href="#services" class="btn-primary">Explore Services</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <button class="button" data-text="Awesome">
+            <span class="actual-text">&nbsp;Services&nbsp;</span>
+            <span aria-hidden="true" class="hover-text">&nbsp;Services&nbsp;</span>
+        </button>
+
+        <div class="services-container">
+            <div class="service-card">
+                <div class="video-services">
+                    <video class="background-video" autoplay loop muted>
+                        <source src="./img/carGsrage (online-video-cutter.com).mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="service-content">
+                    <h3>Engine Repair</h3>
+                    <p>We specialize in engine diagnostics and repairs, ensuring top performance.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="video-services">
+                    <video class="background-video" autoplay loop muted>
+                        <source src="./img/brakesVideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="service-content">
+                    <h3>Brake Service</h3>
+                    <p>High-quality brake repairs and replacements to keep you safe on the road.</p>
+                </div>
+            </div>
+
+            <div class="service-card adblue">
+                <div class="video-services">
+                    <video class="background-video" autoplay loop muted>
+                        <source src="./img/adblue-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="service-content">
+                    <h3>AdBlue Filter Removal</h3>
+                    <p>Efficient removal of AdBlue filters for enhanced vehicle performance.</p>
+                </div>
+            </div>
+
+            <div class="service-card germany-cars">
+                <div class="video-services">
+                    <video class="background-video" autoplay loop muted>
+                        <source src="./img/1734862779047700 (online-video-cutter.com).mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="service-content">
+                    <h3>German Car Specialists</h3>
+                    <p>Expert maintenance and repair for German vehicles like BMW, Audi, and Mercedes-Benz.</p>
+                </div>
+            </div>
+
+            <div class="service-card full-service">
+                <div class="video-services afroid">
+                    <video class="background-video" autoplay loop muted>
+                        <source src="./img/afroid (online-video-cutter.com).mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="service-content">
+                    <h3>Comprehensive Car Repair</h3>
+                    <p>From diagnostics to full repairs, we handle everything your car needs to run like new.</p>
+                </div>
+            </div>
+
+            <div class="service-card custom-upgrades">
+                <div class="video-services">
+                    <video class="background-video" autoplay loop muted>
+                        <source src="./img/tmaVIdeoUp.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="service-content">
+                    <h3>Custom Upgrades</h3>
+                    <p>Enhance your vehicle with performance tuning, body kits, and interior modifications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h1 class="about-title">About Us</h1>
+
+        <!-- Where You Can Find Us -->
+        <div class="container">
+            <div class="p-and-btn">
+                <p class="text-2xl font-sans">Where you can find us?</p>
+                <button onclick="toggleDetails('location-details')" class="px-6 py-2 text-lg cursor-pointer text-black rounded-lg">
+                    <i class="fa-solid fa-caret-down" style="color: #e63946;"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="location-details" class="hidden details-container">
+          <div class="location-text">
+            <i class="fa-solid fa-location-dot" style="color: #FFD43B;"></i>
+            <p>
+              TMA Team Mecanique Alger<br>
+              M857+558, Khemis El Khechna, Algeria
+            </p>
+          </div>
+          <section class="location-info">
+            <img src="./img/TMA-PORTRAIT.jpg" alt="Garage from the street" class="location-image">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3200.6905373174936!2d3.31047727427281!3d36.65789477571097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e5b000fe78d2b%3A0x8c4ee64f63ceec25!2sTMA%20Team%20Mecanique%20Alger!5e0!3m2!1sfr!2sdz!4v1735217307979!5m2!1sfr!2sdz" 
+              width="600" height="450" class="location-map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </section>
+        </div>
+
+        <!-- Why Us Section -->
+        <div class="container">
+          <div class="p-and-btn">
+            <p class="text-2xl font-sans">Why us?</p>
+            <button onclick="toggleDetails('why-us-details')" class="px-6 py-2 text-lg cursor-pointer text-black rounded-lg">
+              <i class="fa-solid fa-caret-down" style="color: #e63946;"></i>
+            </button>
+          </div>
+        </div>
+<div id="why-us-details" class="hidden details-container">
+  <div class="why">
+    <h3 class="text-xl font-semibold">Fast Service</h3>
+    <p>
+      big team capable of handling up to 100 cars a day, quick and efficient service with quality.
+    </p>
+  </div>
+
+  <div class="why">
+    <h3 class="text-xl font-semibold">Honesty & Transparency</h3>
+    <p>
+      Detailed photos of every part of your car ensure full transparency and accountability.
+    </p>
+  </div>
+
+  <div class="why">
+    <h3 class="text-xl font-semibold">Competitive Pricing</h3>
+    <p>
+      High-quality service doesn’t have to be expensive. We offer excellent value for your car's care.
+    </p>
+  </div>
+</div>
+
+        <!-- TMA Mechanic Videos -->
+        <div class="video-cnt bg-gray-900 text-white p-8 rounded-lg shadow-lg flex flex-col items-center space-y-6">
+            <h2 class="text-3xl font-bold">TMA Mechanic Videos</h2>
+            <p class="text-lg text-gray-300 max-w-lg text-center">
+          TMA provides exclusive mechanic repair videos on Instagram! Learn valuable tips, tricks, and tutorials to enhance your mechanical skills.
+            </p>
+            <button class="synthwave-laser-button">
+                <a 
+                href="https://www.instagram.com/stories/tmateammecanique/" 
+                target="_blank">
+                Watch Our Videos 📽
+                  </a>
+            </button>
+           
+        </div>
+    </section>
+    <section class="contact" id="contact">
+      <h1 class="contact-title">Contact Us</h1>
+      <p class="p-contact">Get in touch with us!<img  style="width: 60px; display: inline; margin: 0 6px;" src="./img/tmawhite-removebg-preview.png" alt="">always here for you !</p>
+      
+        <div class="contact-info">
+                <div class="info-item">
+                <i class="fa-solid fa-location-dot" style="color: #e63946;"></i>
+                <h1>Address</h1>
+                <p>TMA Team Mecanique Alger<br>
+                    M857+558, Khemis El Khechna, Algeria</p>
+                </div>
+                <div class="info-item">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yassinechaibi42@gmail.com" target="_blank">
+                        <button class="btn">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              style="display:inline-block;vertical-align:middle"
+                              role="img"
+                              y="128"
+                              x="128"
+                              fill="#0092E4"
+                              viewBox="0 0 24 24"
+                              height="40px"
+                              width="40px"
+                            >
+                              <path
+                                d="M21.456 10.154c.123.659.19 1.348.19 2.067c0 5.624-3.764 9.623-9.449 9.623A9.841 9.841 0 0 1 2.353 12a9.841 9.841 0 0 1 9.844-9.844c2.658 0 4.879.978 6.583 2.566l-2.775 2.775V7.49c-1.033-.984-2.344-1.489-3.808-1.489c-3.248 0-5.888 2.744-5.888 5.993c0 3.248 2.64 5.998 5.888 5.998c2.947 0 4.953-1.685 5.365-3.999h-5.365v-3.839h9.26Z"
+                              ></path>
+                            </svg>
+                          </button>
+                    </a>
+                </div>
+                <div class="info-item">
+                <i class="fa-solid fa-phone" style="color: #e63946;"></i>
+                <h1>Phone</h1>
+                <p><a href="tel:+0770222278" style="color: inherit; text-decoration: none;">07 70 22 22 78</a></p>
+                </div>
+          </div>
+          
+        
+    </section>
+    
+    <script src="tma.js"></script>
+</body>
+</html>
