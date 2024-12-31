@@ -37,12 +37,14 @@
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgb(144, 27, 56); /* Darker blue when hovered */
 }
-.nav-home{
+.nav-home {
   background: url("./img/lamborghini-6000x3375-19821.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-size: cover; /* Ensures the image covers the element */
+  background-position: center; /* Centers the image */
+  background-attachment: scroll; /* Prevents mobile issues */
+  background-repeat: no-repeat; /* Ensures the image does not repeat */
 }
+
   /*  */
   .language-toggle {
     display: flex;
